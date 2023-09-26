@@ -1,0 +1,271 @@
+.hamburger-menu{
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    top: 10%;
+    right: 5%;
+    z-index: 300;
+    @media (mix-width: 800px) {
+        width: 40px;
+        height: 40px;
+        
+    }
+    @media (mix-width: 500px) {
+        width: 25px;
+        height: 25px;
+        
+    }
+    .menu{
+        @extend %fullSpace;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        cursor: pointer;
+        &-line{
+            width: 100%;
+            height: 4px;
+            background-color:$color-primary ;
+            transition: all 0.5s 0.5s;
+            transform-origin: right ;
+            @media (mix-width: 800px) {
+                height: 3px;
+                
+            }
+            @media (mix-width: 500px) {
+                height: 2px;
+                
+            }
+         }
+    }
+
+}
+.logo{
+    font-size: 70px;
+    color:$color-primary;
+    @include flexLayout;
+    width: 110px;
+    height: 110px;
+    border: 3px solid $color-primary;
+    border-radius: 50%;
+    margin-right: 20px;
+    @media (mix-width: 1000px) {
+        font-size: 50px;
+        width: 90px;
+        height: 90px;
+        
+    }
+    @media (mix-width: 500px) {
+        height: 50px;
+        width: 50px;
+        font-size: 30px;
+        border-width: 2px;
+
+        
+    }
+}
+.main-name{
+    color: $color-secondary;
+    font-family: $font-nunito;
+    font-size: 50px;
+    @include textStyle;
+    @media (mix-width: 1000px) {
+        font-size: 50px;
+        
+    }
+    @media (mix-width: 500px) {
+        height: 20px;
+        text-align: center;
+        
+    }
+}
+.sub-name{
+    font-family: $font-josefinSans;
+    font-size: 18px;
+    color: $color-secondary;
+    @include textStyle;
+    text-align: center;
+    @media (mix-width: 500px) {
+        height: 12px;
+        text-align: center;
+        
+    }
+}
+.main-heading{
+    font-family:$font-dancingScript ;
+    font-size: 100px;
+    font-weight: 300;
+    margin-bottom: 40px;
+    color: $color-primary;
+    @media (max-width:1600px) {
+        font-size: 60px;
+        
+    }
+    @media (mix-width: 1000px) {
+        font-size: 60px;
+        
+    }
+    @media (mix-width: 500px) {
+      font-size:40px ;
+      margin-bottom: 20px; ;
+        
+    }
+}
+.sub-heading{
+    font-family:$font-josefinSans ;
+    font-size: 60px;
+    font-weight: 300;
+  
+    color: $color-secondary;
+    text-align: center;
+    
+    @media (max-width:1600px) {
+        font-size: 50px;
+        margin-bottom: 80px;
+    }
+    @media (max-width:1300px) {
+        font-size: 40px;
+        margin-bottom: 3 0px;
+    }
+    @media (mix-width: 1000px) {
+        font-size: 30px;
+        
+    }
+    @media (mix-width: 500px) {
+        font-size:20px ;
+        margin-bottom: 10px; ;
+          
+      }
+
+}
+.btn-main{
+    width: 170px;
+    height: 45px;
+    letter-spacing: 1px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: $color-primary;
+    background-color: transparent;
+    border:1px solid $color-primary;
+    outline: none;
+    cursor: pointer;
+    transition:all 0.5s ;
+    &:hover{
+        background-color: $color-primary;
+        color: $color-black;
+    }
+    @media (mix-width: 800px) {
+        width: 150px;
+        height: 40px;
+        font: 12px
+        ;
+        
+    }
+    @media (mix-width: 500px) {
+        width: 130px;
+        height: 30px;
+        font: 10px;
+        
+    }
+
+
+
+}
+.card
+{
+    width:33.3333%;
+    height: 30vw;
+    position: relative;
+    overflow: hidden;
+    &:hover .card-overlay{
+        left: 0;
+
+    }
+    &-overlay{
+        position: absolute;
+        top: 0;
+        left: -100%;
+        background-color: rgba($color-primary,0.6);
+        flex-direction: column;
+       @extend %fullSpace;
+       color: $color-white;
+       @include flexLayout;
+       z-index: 10;
+       transition: left 0.6s;
+       &-heading{
+           font-family: $font-nunito;
+           font-size: 50px;
+           @include textStyle(capitalize);
+           @media (mix-width: 900px) {
+            font-size: 35px;
+            
+           }
+           @media (mix-width: 650px) {
+            font-size: 25px;
+            
+           }
+           @media (max-with:500px) {
+               display: none;
+               
+           }
+
+
+        
+       }
+       &-paragraph{
+        font-family: $font-josefinSans;
+        font-size: 30px;
+        margin-bottom: 30px;
+        @include textStyle(capitalize);
+        @media (mix-width: 900px) {
+            font-size: 20px;
+            
+        }
+        @media (mix-width: 650px) {
+            font-size: 15px;
+            
+           }
+           @media (max-with:500px) {
+            display: none;
+            
+         }
+
+       }
+       &-btn{
+           width: 150px;
+           height: 40px;
+           color:$color-primary ;
+           background-color: $color-white;
+           font-family: $font-josefinSans;
+           font-weight:bold ;
+           text-transform: uppercase;
+           font-size: 14px;
+           letter-spacing: 1px;
+           border: 1px solid $color-primary;
+           outline: none;
+           border-radius: 30px;
+           cursor: pointer;
+           @media (mix-width: 900px) {
+            font-size: 12px;
+            width: 130px;
+            height: 30px;
+            
+          }
+          @media (mix-width: 650px) {
+            font-size: 10px;
+            width: 100px;
+            height: 30px;
+            
+           }
+
+ 
+       }
+    }
+    &-img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: .5;
+    }
+    
+}
